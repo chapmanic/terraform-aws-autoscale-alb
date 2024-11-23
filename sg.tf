@@ -24,7 +24,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_https" {
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
   security_group_id = aws_security_group.allow_http_sg.id
-  cidr_ipv4         = "84.17.50.171/32"
+  cidr_ipv4         = "0.0.0.0/0"
   from_port         = 22
   ip_protocol       = "tcp"
   to_port           = 22
