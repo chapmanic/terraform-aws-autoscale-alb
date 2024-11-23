@@ -1,0 +1,4 @@
+.terraform*
+ec2_test.pub
+*.tfstate*
+*.tfvars
