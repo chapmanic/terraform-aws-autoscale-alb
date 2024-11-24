@@ -1,3 +1,4 @@
+# Creation of Application Load Balancer w/ SG and Subnet defined
 resource "aws_lb" "ec2_alb" {
   name               = "ec2-alb"
   internal           = false
@@ -6,6 +7,7 @@ resource "aws_lb" "ec2_alb" {
   subnets            = var.public_subnets_id
 }
 
+# Creation of Target group w/ VPC and Health check
 resource "aws_lb_target_group" "ec2_alb" {
   name     = "ec2-alb-tg"
   port     = 80
@@ -24,6 +26,7 @@ resource "aws_lb_target_group" "ec2_alb" {
   }
 }
 
+# Creation of LB listener on port 80
 resource "aws_lb_listener" "ec2_alb" {
   load_balancer_arn = aws_lb.ec2_alb.arn
   port              = 80
